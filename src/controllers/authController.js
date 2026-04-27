@@ -53,16 +53,8 @@ export const login = async (req, res) => {
     
 }
 
-export const getUser = async (req, res) => {
-    try {
-        const user = verifyToken(req.body.token)
-        res.json({status: "success", user })
-    } catch (error) {
-        console.error('Error getting user', error)
-    }
-    }
-
 export const logout = async (req, res) => {
+        
     res.cookie('jwt', '', {
         httpOnly: true,
         expires: new Date(0)
